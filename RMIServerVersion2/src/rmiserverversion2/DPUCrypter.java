@@ -58,8 +58,8 @@ public  class DPUCrypter {
     
     public static String CrackFile(long fromIndex, long toIndex, byte[] inputBytes, String checkSum) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException, InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IOException, IOException {
 
-        Date startDate=new Date();
         for (long currentIndex = fromIndex; currentIndex <= toIndex; currentIndex++) {   
+            Date startDate=new Date();
             String numberAsString = Long.toString(currentIndex);
             System.out.println("Current key: "+numberAsString+" / Pending tries: "+(toIndex- currentIndex)+ " / cracking started at "+startDate.toString());
             byte[] internalReturn = DPUCrypter.CryptByteUsingAES(false, numberAsString, inputBytes, checkSum);

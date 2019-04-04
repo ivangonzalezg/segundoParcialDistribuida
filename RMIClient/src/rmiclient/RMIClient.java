@@ -25,7 +25,7 @@ public class RMIClient {
             
             byte[] keyValue = "hello".getBytes();
             System.out.println("Real message: " + new String(keyValue));
-            String Key = "11357";
+            String Key = "81357";
             System.out.println("Real key: " + Key);            
             String checksum = stub.GetChecksum(keyValue);
             System.out.println("Checksum: " + checksum);
@@ -33,8 +33,8 @@ public class RMIClient {
             System.out.println("Encrypted message: " + new String (response));
             byte[] responsed =  stub.DecryptFile( response , Key);
             System.out.println("Decrypted message: " + new String (responsed));
-            long inicio = 10000;
-            long fin = 19999;
+            long inicio = 0;
+            long fin = 199999;
             System.out.println("Cracking key...");
             String key = stub.CrackFileAndFindKey(inicio, fin, response, checksum);
             System.out.println("Cracked key: " + key);
