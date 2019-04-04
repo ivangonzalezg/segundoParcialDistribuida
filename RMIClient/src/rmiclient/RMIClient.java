@@ -39,7 +39,7 @@ public class RMIClient {
             String key = stub.CrackFileAndFindKey(inicio, fin, response, checksum);
             System.out.println("Cracked key: " + key);
         } catch(Exception error) {
-            System.err.println(error);
+            System.err.println("Connection error!!");
         }
     }
     

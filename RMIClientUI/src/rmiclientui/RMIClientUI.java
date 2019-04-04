@@ -32,9 +32,15 @@ public class RMIClientUI extends javax.swing.JFrame {
     String lastChecksum;
     
     public RMIClientUI() throws RemoteException, NotBoundException, NotBoundException {
-        initComponents();
-        Registry registry = LocateRegistry.getRegistry("localhost",1099);
-        stub = (RMIServerInterface)registry.lookup("RemoteObject");
+        try {
+            initComponents();
+            Registry registry = LocateRegistry.getRegistry("localhost",1099);
+            stub = (RMIServerInterface)registry.lookup("RemoteObject");
+        } catch (Exception error) {
+            msgbox("Connection error!!");
+            System.err.println(error);
+            System.exit(0);
+        }
     }
     
     private void msgbox(String s){
