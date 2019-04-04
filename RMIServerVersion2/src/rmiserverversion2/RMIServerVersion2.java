@@ -100,4 +100,14 @@ public class RMIServerVersion2 implements RMIServerInterface{
         
         return (checkSumOfDecryptedFile);
     }
+
+    @Override
+    public String GetStudentId() throws RemoteException {
+        return "1233342361";
+    }
+
+    @Override
+    public String GetStudentFullName() throws RemoteException {
+        return "Iván Darío González García";
+    }
 }

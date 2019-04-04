@@ -18,5 +18,7 @@ public interface RMIServerInterface extends Remote {
     public byte[] DecryptFile(byte[] fileBytes, String key) throws RemoteException;
     public String GetChecksum(byte[] fileBytes) throws RemoteException;
     public String CrackFileAndFindKey(long fromIndex, long toIndex, byte[] inputFile, String checkSum) throws RemoteException;
+    public String GetStudentId() throws RemoteException;   
+    public String GetStudentFullName() throws RemoteException;
     
 }

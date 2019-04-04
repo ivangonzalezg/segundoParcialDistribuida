@@ -25,7 +25,7 @@ public class RMIClient {
             
             byte[] keyValue = "hello".getBytes();
             System.out.println("Real message: " + new String(keyValue));
-            String Key = "81357";
+            String Key = "1357";
             System.out.println("Real key: " + Key);            
             String checksum = stub.GetChecksum(keyValue);
             System.out.println("Checksum: " + checksum);
@@ -38,6 +38,8 @@ public class RMIClient {
             System.out.println("Cracking key...");
             String key = stub.CrackFileAndFindKey(inicio, fin, response, checksum);
             System.out.println("Cracked key: " + key);
+            System.out.println("Name: " + stub.GetStudentFullName());
+            System.out.println("Id: " + stub.GetStudentId());            
         } catch(Exception error) {
             System.err.println("Connection error!!");
         }
